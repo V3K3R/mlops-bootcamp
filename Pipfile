@@ -9,6 +9,8 @@ sklearn = "*"
 seaborn = "*"
 matplotlib = "*"
 pyarrow = "*"
+mlflow = "*"
+psycopg2 = "*"
 
 [dev-packages]
 ipykernel = "*"

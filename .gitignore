@@ -127,3 +127,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# misc
+mlruns
+02-experiment-tracking/data/pre-processed
+.vscode

@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  db:
+    image: postgres:14.2
+    ports:
+      - 35432:5432
+    # volumes:
+    #   - ./dev/init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: db
+  wait-for-db:
+    image: dadarek/wait-for-dependencies
+    depends_on:
+      - db
+    command: db:5432
