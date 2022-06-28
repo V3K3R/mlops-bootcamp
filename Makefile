@@ -16,3 +16,12 @@ preprocess:
 		--dest_path 02-experiment-tracking/data/pre-processed
 train:
 	pipenv run python 02-experiment-tracking/train.py
+
+register:
+	pipenv run python 02-experiment-tracking/register_model.py
+
+clean:
+	mlflow gc \
+		--backend-store-uri postgresql://admin:admin@localhost:35432/db
+
+	docker-compose down --remove-orphans --volumes --timeout=5 2>/dev/null
