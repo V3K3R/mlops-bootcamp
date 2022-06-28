@@ -11,6 +11,7 @@ matplotlib = "*"
 pyarrow = "*"
 mlflow = "*"
 psycopg2 = "*"
+hyperopt = "*"
 
 [dev-packages]
 ipykernel = "*"
