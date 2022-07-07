@@ -12,9 +12,12 @@ pyarrow = "*"
 mlflow = "*"
 psycopg2 = "*"
 hyperopt = "*"
+prefect = "==2.0b7"
+python-dateutil = "*"
 
 [dev-packages]
 ipykernel = "*"
+flake8 = "*"
 
 [requires]
 python_version = "3.10"
