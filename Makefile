@@ -10,11 +10,11 @@ mlflow: db
 		--backend-store-uri postgresql://admin:admin@localhost:35432/db \
 		--default-artifact-root ./mlruns
 
-preprocess:
+02-preprocess:
 	pipenv run python 02-experiment-tracking/preprocess_data.py \
 		--raw_data_path 02-experiment-tracking/data/raw \
 		--dest_path 02-experiment-tracking/data/pre-processed
-train:
+02-train:
 	pipenv run python 02-experiment-tracking/train.py
 
 register:
@@ -25,3 +25,17 @@ clean:
 		--backend-store-uri postgresql://admin:admin@localhost:35432/db
 
 	docker-compose down --remove-orphans --volumes --timeout=5 2>/dev/null
+
+
+######################################
+## 03: Workflow Orchestration module #
+######################################
+
+03-flow:
+	pipenv run python 03-orchestration/homework.py
+
+orion:
+	prefect orion start
+
+deploy:
+	prefect deployment create 03-orchestration/homework.py
