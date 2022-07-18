@@ -133,3 +133,5 @@ mlruns
 02-experiment-tracking/data/pre-processed
 .vscode
 03-orchestration/models
+04-deployment/data
+04-deployment/models
