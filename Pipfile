@@ -14,6 +14,7 @@ psycopg2 = "*"
 hyperopt = "*"
 prefect = "==2.0b7"
 python-dateutil = "*"
+nbconvert = "*"
 
 [dev-packages]
 ipykernel = "*"

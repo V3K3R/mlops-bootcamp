@@ -39,3 +39,18 @@ orion:
 
 deploy:
 	prefect deployment create 03-orchestration/homework.py
+
+
+######################################
+######## 04: deployment module #######
+######################################
+
+nb2script:
+	jupyter nbconvert --to script 04-deployment/starter.ipynb
+
+04-starter:
+	pipenv run python 04-deployment/starter.py 2021 2
+
+04-docker:
+	docker build -t mlops-hw4:v1 -f 04-deployment/homework.dockerfile .
+	docker run -it --rm mlops-hw4:v1 2021 2
