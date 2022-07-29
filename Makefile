@@ -54,3 +54,17 @@ nb2script:
 04-docker:
 	docker build -t mlops-hw4:v1 -f 04-deployment/homework.dockerfile .
 	docker run -it --rm mlops-hw4:v1 2021 2
+
+
+######################################
+###### 06: best practises module #####
+######################################
+
+06-docker:
+	docker build -t mlops-hw6:v1 -f 06-best-practices/Dockerfile .
+	docker run -it --rm mlops-hw6:v1 2021 2
+
+s3:
+	docker-compose up -d s3
+	aws --endpoint-url=http://localhost:4566 s3 mb s3://nyc-duration
+	aws --endpoint-url=http://localhost:4566 s3 ls
